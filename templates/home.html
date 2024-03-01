@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .screen {
+            background: radial-gradient(circle, #a9a9a9, #696969);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .name {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+            width: 60%;
+        }
+
+        .atm-button {
+            background: #4caf50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 48px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .atm-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .alert {
+            color: #ffffff;
+            background-color: #4caf50;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="name">Face Biometric Authentication System For ATM Using Deep Learning
+
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-success">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="buttons">
+            <button class="atm-button" onclick="location.href='/register'">Register</button>
+            <button class="atm-button" onclick="location.href='/access'">Start</button>
+        </div>
+    </div>
+</body>
+
+</html>
