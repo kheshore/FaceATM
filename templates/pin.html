@@ -31,7 +31,7 @@
         }
 
         .atm-button {
-            background: #4caf50;
+            background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
             border: none;
             color: white;
             padding: 15px 32px;
@@ -41,11 +41,13 @@
             font-size: 48px;
             transition-duration: 0.4s;
             cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px;
         }
 
         .atm-button:hover {
-            background-color: white;
-            color: black;
+            background: linear-gradient(to bottom,  #2c3e50 ,#bdc3c7);
+            color: white;
         }
 
         .alert {
@@ -65,10 +67,21 @@
             font-size: 24px;
             text-align: center;
         }
+        .logo{
+            position: absolute;
+            width: 280px;
+            height: auto;
+            top: calc(50% - 100px);
+            left: calc(50% - 140px)
+
+        }
     </style>
 </head>
 
 <body>
+    <div>
+        <img src="static/BMlogo.png" alt="BMlogo" class="logo">
+    </div>
     <div>
         <form class="screen" id="pinForm" action="/pin" method="POST">
             <input type="password" id="pin" name="pin" placeholder="Enter PIN" class="pin-input" required>

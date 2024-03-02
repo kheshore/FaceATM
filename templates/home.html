@@ -35,10 +35,11 @@
             margin-top: 20px;
             font-size: 40px;
             width: 60%;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         .atm-button {
-            background: #4caf50;
+            background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
             border: none;
             color: white;
             padding: 15px 32px;
@@ -48,11 +49,13 @@
             font-size: 48px;
             transition-duration: 0.4s;
             cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px;
         }
 
         .atm-button:hover {
-            background-color: white;
-            color: black;
+            background: linear-gradient(to bottom,  #2c3e50 ,#bdc3c7);
+            color: white;
         }
 
         .alert {
@@ -63,10 +66,21 @@
             margin-top: 20px;
             font-size: 28px;
         }
+        .logo{
+            position: absolute;
+            width: 280px;
+            height: auto;
+            top: calc(50% - 100px);
+            left: calc(50% - 140px)
+
+        }
     </style>
 </head>
 
 <body>
+    <div>
+        <img src="static/BMlogo.png" alt="BMlogo" class="logo">
+    </div>
     <div class="screen">
         <div class="name">Face Biometric Authentication System For ATM Using Deep Learning
 
