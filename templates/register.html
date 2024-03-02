@@ -27,7 +27,7 @@
             margin-bottom: 20px;
         }
 
-        input[type="text"] {
+        input {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -46,8 +46,8 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        
-        .buttons{
+
+        .buttons {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,6 +55,7 @@
             width: 100%;
             gap: 10px;
         }
+
         button[type="submit"] {
             background-color: #008CBA;
         }
@@ -82,7 +83,6 @@
         var captureComplete = false;
         var imageData = '';
 
-        // Capture an image from the webcam and save it as a Base64 string
         function captureImage(video, canvas) {
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             imageData = canvas.toDataURL('image/png');
@@ -93,7 +93,6 @@
             var video = document.getElementById('video');
             var canvas = document.getElementById('canvas');
 
-            // Get access to the webcam
             navigator.mediaDevices.getUserMedia({video: true})
                 .then(function (stream) {
                     video.srcObject = stream;
@@ -112,7 +111,6 @@
                     e.preventDefault();
                     alert('Please complete the capture before submitting the form.');
                 } else {
-                    // Add the image data to the form
                     var input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = 'image';
@@ -129,7 +127,10 @@
         <div class="form-container">
             <form id="registerForm" action="/register" method="POST">
                 <div>
-                    <input type="text" id="username" name="username" placeholder="User Name" required>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="username" name="username" placeholder="User Name" style="text-align: center;" required>
+                        <input type="password" id="pin" name="pin" placeholder="PIN" style="text-align: center;" required>
+                    </div>
                     <div class="video-container">
                         <video id="video" width="640" height="480" autoplay></video>
                         <canvas id="canvas" width="640" height="480"></canvas>

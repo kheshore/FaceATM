@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Face ATM</title>
     <style>
         body {
             margin: 0;
@@ -28,13 +28,6 @@
             align-items: center;
             height: 100%;
             width: 100%;
-        }
-
-        .name {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 40px;
-            width: 60%;
         }
 
         .atm-button {
@@ -63,25 +56,27 @@
             margin-top: 20px;
             font-size: 28px;
         }
+
+        .pin-input {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            font-size: 24px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <div class="screen">
-        <div class="name">Face Biometric Authentication System For ATM Using Deep Learning
-
-        </div>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="alert alert-success">
-            {{ messages[0] }}
-        </div>
-        {% endif %}
-        {% endwith %}
-        <div class="buttons">
-            <button class="atm-button" onclick="location.href='/register'">Register</button>
-            <button class="atm-button" onclick="location.href='/pin'">Start</button>
-        </div>
+    <div>
+        <form class="screen" id="pinForm" action="/pin" method="POST">
+            <input type="password" id="pin" name="pin" placeholder="Enter PIN" class="pin-input" required>
+            <div class="buttons">
+                <button class="atm-button" onclick="window.location.href = '/'">Cancel</button>
+                <button type="submit" class="atm-button">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
 
